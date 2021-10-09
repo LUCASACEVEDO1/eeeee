@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.cuadro1{
+
+
+	position: absolute;
+	background: red;
+	top: 3%;
+	right: 28%;
+	width: 50%;
+	height:30%;
+	color: white;
+	border-radius: 10px;
+	font-size: 300%;
+	text-align: center;
+}	
+.cuadro2{
+
+
+	position: absolute;
+	background: orange;
+	top: 36%;
+	right: 54%;
+	width: 25%;
+	height:30%;
+	color: white;
+	border-radius: 10px;
+	font-size: 250%;
+		text-align: center;
+}	
+.cuadro3{
+
+
+	position: absolute;
+	background: orange;
+	top: 36%;
+	right: 27%;
+	width: 25%;
+	height:30%;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 400%;
+
+}	
+.cuadropregunta{
+
+
+	position: absolute;
+	background: orange;
+	top: 36%;
+	right: 1%;
+	width: 25%;
+	height:30%;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 400%;
+
+}	
+.cuadropregunta2{
+
+
+	position: absolute;
+	background: orange;
+	top: 69%;
+	right: 1%;
+	width: 25%;
+	height:30%;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 400%;
+
+}	
+.cuadro4{
+
+
+	position: absolute;
+	background: grey;
+	top: 69%;
+	right: 28%;
+	width: 25%;
+	height:30%;
+	color: white;
+	font-size: 300%;
+	z-index: 2;
+}
+.cuadro5{
+
+
+	position: absolute;
+	background: grey;
+	top: 69%;
+	right: 53%;
+	width: 25%;
+	height:30%;
+	color: white;
+font-size: 300%;
+z-index: 5;
+	z-index: 1;
+}	
+
+</style>	
+	<title></title>
+</head>
+<body>
+<div class="cuadro1" id="ra"></div>
+<input type="text" div class="cuadro2" placeholder="Digite la respuesta" id="respu"></div>
+<div class="cuadro3" onclick="respuesta()">Confirmar pregunta</div>
+<div class="cuadro4" id=cronometrico></div>
+<div class="cuadro5" id="ri"></div>
+<div class="cuadropregunta" onclick="prueba()">Buscar Pregunta</div>
+<div class="cuadropregunta2" onclick="gg()">mostrar respuesta</div>
+<script>
+y=0;	
+x=60;
+cronometrico.innerHTML=x;
+score=0;
+function iniciar()
+{
+if(x==0)
+{
+clearInterval(logo);
+}
+else
+{
+cronometrico.innerHTML=x;
+x=x-1;
+}
+
+
+	}
+
+function prueba()
+{
+
+console.log(y);
+num1=Math.floor((Math.random() * (51-1))+1
+	);
+
+num2=Math.floor((Math.random() * (51-1))+1
+	);
+
+numsigno=Math.floor((Math.random() * (3-1))+1
+	);
+
+
+if(numsigno==1)
+{
+signo="+";
+solucion=num1+num2;
+}
+else
+{
+signo="-";
+solucion=num1-num2;
+
+}
+console.log(solucion);
+
+ra.innerHTML=num1 + signo + num2;
+}
+
+
+function respuesta()
+{
+
+console.log(respu.value);
+console.log(solucion);
+
+if(respu.value==solucion)
+{
+score=score+10;
+}
+else
+{
+score=score-10;
+
+}
+
+
+}
+function gg()
+{
+
+
+ri.innerHTML= "Tienes " + score + " puntos";
+}
+logo=setInterval(iniciar,1000);
+
+
+
+</script>
+</body>
+</html>
